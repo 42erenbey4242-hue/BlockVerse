@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
+    <h1>Avatarın</h1>
+    <div id="avatar-container">
+        <img id="avatar-img" src="bacon.png" style="width:100%">
+    </div>
+    <h3 id="current-gear">Şu an giyilen: Yok</h3>
+    <div id="inventory-list"></div>
+    <a href="index.html">Ana Sayfaya Dön</a>
 
+    <script src="main.js"></script>
+    <script>
+        // Envanterindeki eşyaları listele
+        let invDiv = document.getElementById("inventory-list");
+        user.inventory.forEach(item => {
+            let btn = document.createElement("button");
+            btn.innerText = item + " Giy";
+            btn.onclick = () => {
+                document.getElementById("current-gear").innerText = "Giyilen: " + item;
+                // Burada profil fotoğrafını güncelleme kodlarını yazacağız
+            };
+            invDiv.appendChild(btn);
+        });
+    </script>
+</body>
+</html>
